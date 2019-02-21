@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import './App.css';
 import Button from '@material-ui/core/Button';
-import ImgDropAndCrop from './learn/ImgDropAndCrop';
-import MyEditor from './learn/image';
+import ImgDropAndCrop from './learn/ImgDropAndCrop'
+import MyEditor from './learn/MyEditor'
 
 
 function App() {
@@ -11,7 +11,9 @@ function App() {
     <Button variant="contained" color="primary">
       Hello World
     </Button>
-
+    <div className='App'>
+      <MyEditor/> 
+       </div>
    	<div className='App'>
         <ImgDropAndCrop />
       </div>
