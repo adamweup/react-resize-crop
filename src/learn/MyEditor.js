@@ -2,6 +2,7 @@ import React from 'react'
 import ReactAvatarEditor from 'react-avatar-editor'
 import Dropzone from 'react-dropzone'
 import Preview from './Preview.jsx'
+import classNames from 'classnames'
 
 class MyEditor extends React.Component {
 //   handleDrop = dropped => {
@@ -147,12 +148,22 @@ render() {
         multiple={false}
         style={{ width: this.state.width, height: this.state.height, marginBottom:'35px' }}
       >
-      {({getRootProps, getInputProps}) => (
-        <div {...getRootProps()}>
-            <input {...getInputProps()} />
-           Drag & Drop Here 
-        </div>
-    )}        <div>
+              {({getRootProps, getInputProps, isDragActive}) => {
+
+               return (
+            <div
+              {...getRootProps()}
+              className={classNames('dropzone', {'dropzone--isActive': isDragActive})}
+            >
+              <input {...getInputProps()} />
+              {
+                isDragActive ?
+                  <p>Drop files here...</p> :
+                  <p>Try dropping some files here, or click to select files to upload.</p>
+              }
+            </div>
+               )}}
+              <div>
           <ReactAvatarEditor
             ref={this.setEditorRef}
             scale={parseFloat(this.state.scale)}
