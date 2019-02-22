@@ -26,26 +26,6 @@ class ImageApp extends Component {
     height: 200
   };
 
-  verifyFile = files => {
-    if (files && files.length > 0) {
-      const currentFile = files[0];
-      const currentFileType = currentFile.type;
-      const currentFileSize = currentFile.size;
-      if (currentFileSize > imageMaxSize) {
-        alert(
-          "This file is not allowed. " + currentFileSize + " bytes is too large"
-        );
-        return false;
-      }
-      // array.includes is not widely supported
-      if (acceptedFileTypes.indexOf(currentFileType) === "-1") {
-        alert("This file is not allowed. Only images are allowed.");
-        return false;
-      }
-      return true;
-    }
-  };
-
   handleClick = e => e.preventDefault();
 
   handleDrop = acceptedFiles => {
