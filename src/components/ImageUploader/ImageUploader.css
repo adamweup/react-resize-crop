@@ -1,0 +1,21 @@
+.image-uploader-root {
+  width: 250px;
+  height: 250px;
+  position: relative;
+  border: 1px dashed #000;
+}
+
+.image-uploader-drop-area {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.image-uploader-file-upload {
+  width: 0.1;
+  height: 0.1;
+  opacity: 0;
+  overflow: hidden;
+  position: absolute;
+  z-index: -1;
+}
